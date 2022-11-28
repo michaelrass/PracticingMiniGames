@@ -1,0 +1,6 @@
+@import url(./variables.css);
+@import url(./reset.css);
+@import url(./base.css);
+
+@import url(./modules/gamescontainer.css);
+@import url(./modules/RockPaperScissors.css);
