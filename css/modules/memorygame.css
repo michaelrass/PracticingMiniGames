@@ -1,0 +1,48 @@
+.memorygame__score {
+	text-align: center;
+	font-size: 2rem;
+	color: #fff;
+}
+
+.memory-game__grid {
+	width: 60%;
+	height: 60%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	margin: 2rem auto;
+}
+
+.memory-game__image {
+	width: 90%;
+	height: 90%;
+	justify-self: center;
+	align-self: center;
+	object-fit: contain;
+	cursor: pointer;
+}
+
+.congratulations {
+	width: 100%;
+	flex-flow: column;
+	justify-content: space-between;
+	align-items: center;
+	display: none;
+}
+
+.congratulations__title {
+	color: green;
+	font-size: 3rem;
+}
+
+.congratulations__button-go-again {
+	font-size: 2rem;
+	border: none;
+	background-color: rgb(196, 196, 246);
+	padding: 1rem;
+	border-radius: 15px;
+}
+
+.congratulations--active {
+	display: flex;
+}

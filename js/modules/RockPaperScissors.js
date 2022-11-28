@@ -15,12 +15,12 @@ export default function RockPaperScissors() {
 	let userChoice;
 	let winStreak = 0;
 	
-	winStreakDisplay.innerText = winStreak;
-
+	
 	if (gameContainer) {
 		buttonRock.addEventListener('click', handleButtonRockClick);
 		buttonPaper.addEventListener('click', handleButtonPaperClick);
 		buttonScissors.addEventListener('click', handleButtonScissorsClick);
+		winStreakDisplay.innerText = winStreak;
 	}
 	
 	function handleButtonRockClick() {

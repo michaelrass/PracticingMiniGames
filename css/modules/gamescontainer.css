@@ -28,10 +28,17 @@
 	padding-bottom: 0.5rem;
 	text-decoration: none;
 	color: #000;
+	font-size: 1rem;
+	font-family: sans-serif;
+	font-weight: 600;
 }
 
 .card__image {
 	width: 50%;
 	height: 50%;
 	object-fit: contain;
+}
+
+.card__title {
+	text-decoration: 1px underline;
 }
