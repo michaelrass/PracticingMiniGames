@@ -2,6 +2,10 @@
 	width: 100%;
 	height: 100%;
 	color: #fff;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .whackamole-grid-container {
@@ -12,6 +16,18 @@
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
 
+}
+
+.top-container__your-score-big--hidden {
+	display: none;
+}
+
+.top-container__your-score-big--active {
+	display: block;
+}
+
+.top-container__your-score--hidden {
+	display: none;
 }
 
 .whackamole-grid-container__square {
@@ -27,4 +43,37 @@
 	background-image: url(../../assets/whackamole/mole.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.whackamole__play-again--hidden {
+	display: none;
+}
+
+.whackamole__play-again--active {
+	display: block;
+	margin-bottom: 6rem;
+	font-size: 2rem;
+	padding: 1rem;
+	border: none;
+	border-radius: 15px;
+	background-color: rgb(209, 235, 170);
+	color: #000;
+}
+
+.whackamole__button-start {
+	display: block;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 4rem;
+}
+
+.whackamole__button-start--hidden {
+	display: none;
+}
+
+.body-whackamole__whackamole--hidden {
+	display: none;
 }

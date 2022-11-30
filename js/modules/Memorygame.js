@@ -125,8 +125,6 @@ export default function MemoryGame() {
 			cardsChosen.push(cardsArray[cardId].name);
 			cardsChosenIds.push(cardId);
 			this.setAttribute('src', cardsArray[cardId].image);
-			console.log(cardsChosen);
-			console.log(cardsChosenIds);
 			if (cardsChosen.length === 2) {
 				setTimeout(checkMatch, 500);
 			}

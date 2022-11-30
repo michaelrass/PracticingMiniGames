@@ -5,27 +5,26 @@
 }
 
 .games-container {
-	width: 100%;
+	width: 80%;
+	margin: auto;
 	height: 70vh;
-	display: grid;
-	grid-template-columns: repeat(10, 10%);
-	grid-template-rows: repeat(10, 10%);
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 1rem;
 }
 
 .games-container__card {
-	width: 80%;
-	height: 90%;
-	background-color: white;
-	border-radius: 15px;
-	grid-column: span 2;
-	grid-row: span 3;
-	align-self: center;
-	justify-self: center;
+	width: 250px;
+	height: 250px;
 	display: flex;
 	flex-flow: column;
 	justify-content: space-between;
 	align-items: center;
 	padding-bottom: 0.5rem;
+	background-color: white;
+	border-radius: 15px;
 	text-decoration: none;
 	color: #000;
 	font-size: 1rem;
