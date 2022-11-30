@@ -9,22 +9,21 @@ export default function Whackamole() {
 	const buttonPlayAgain = document.querySelector('.whackamole__play-again--hidden');
 	const scoreDisplayFinal = document.querySelector('.top-container__your-score-big--hidden');
 	const buttonStart = document.querySelector('.whackamole__button-start');
-
+	
 	let yourScore = 0;
 	let timeLeft = 60;
 	let hitPosition;
 	let timerId = null;
 	let countdownTimerId = null;
-	let currentMolePosition = 0;
-	let previousMolePosition = 0;
+	let squareId;
+	let previousMolePosition;
+	let currentClickedPosition;
 	
-	squares.forEach(square => {
+	squares.forEach((square, index) => {
 		square.addEventListener('click', () => {
-			if (square.id === hitPosition) {
-				yourScore += 1;
-				scoreDisplay.innerText = yourScore;
-				hitPosition = null;
-			}
+			squareId = square.id;
+			currentClickedPosition = index;
+			handleSquareClick();
 		});
 	})
 	
@@ -35,6 +34,15 @@ export default function Whackamole() {
 	
 	function handleButtonStartClick() {
 		startTheGame();
+	}
+
+	function handleSquareClick() {
+		if (squareId === hitPosition) {
+			yourScore += 1;
+			scoreDisplay.innerText = yourScore;
+			hitPosition = null;
+			randomSquareFunction();
+		}	
 	}
 
 	function startTheGame() {
@@ -49,19 +57,23 @@ export default function Whackamole() {
 		scoreDisplay.innerText = yourScore;
 		timeLeftDisplay.innerText = timeLeft;
 		
-		moveMole();
+		moveMoleInitialFunction();
 		countdown();
+		randomSquareFunction();
 	}
 	
 	function handleButtonPlayAgainClick() {
 		resetAndPlayAgain();
 	}
-	
-	function moveMole() {
-		timerId = setInterval(randomSquare, 1000);
+
+	function moveMoleInitialFunction() {
+		timerId = setInterval(randomSquareFunction, 1000);
 	}
 	
-	function randomSquare() {
+	function randomSquareFunction(index) {
+		clearInterval(timerId);
+		timerId = setInterval(randomSquareFunction, 1000);
+
 		squares.forEach(square => {
 			square.classList.remove('square__mole');
 		})
@@ -69,7 +81,14 @@ export default function Whackamole() {
 		let randomSquare = squares[Math.floor(Math.random() * 9)];
 		randomSquare.classList.add('square__mole');
 		hitPosition = randomSquare.id;
+
+		if (hitPosition === previousMolePosition) {
+			randomSquareFunction();
+		}
+		
+		previousMolePosition = randomSquare.id;
 	}
+
 	
 	function countdown() {
 		timeLeft -= 1;
