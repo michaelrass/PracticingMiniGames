@@ -1,0 +1,30 @@
+.body__breakout {
+	width: 700px;
+	height: 600px;
+	border: 1px solid #fff;
+	position: relative;
+	background-color: white;
+	margin: auto;
+}
+
+.block {
+	position: absolute;
+	width: 100px;
+	height: 20px;
+	background-color: rgb(0, 75, 31);
+}
+
+.user {
+	position: absolute;
+	width: 100px;
+	height: 20px;
+	background-color: rgb(150, 74, 150);
+}
+
+.ball {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: rgb(127, 127, 250);
+	position: absolute;
+}
